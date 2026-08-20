@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REPUTA</title>
+</head>
+<body>
+  <p>Redirigiendo...</p>
+
+  <script>
+    const destinos = {
+      "001": "https://www.google.com"
+    };
+
+    const id = window.location.pathname.split("/").filter(Boolean).pop();
+    const destino = destinos[id];
+
+    if (destino) {
+      window.location.href = destino;
+    } else {
+      document.body.innerHTML = "<h2>REPUTA</h2><p>Este código aún no está activado.</p>";
+    }
+  </script>
+</body>
+</html>
