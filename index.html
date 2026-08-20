@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>REPUTA</title>
 </head>
+
 <body>
   <p>Redirigiendo...</p>
 
@@ -13,13 +14,18 @@
       "001": "https://www.google.com"
     };
 
-    const id = window.location.pathname.split("/").filter(Boolean).pop();
+    const parametros = new URLSearchParams(window.location.search);
+    const id = parametros.get("id");
+
     const destino = destinos[id];
 
     if (destino) {
-      window.location.href = destino;
+      window.location.replace(destino);
     } else {
-      document.body.innerHTML = "<h2>REPUTA</h2><p>Este código aún no está activado.</p>";
+      document.body.innerHTML = `
+        <h2>REPUTA</h2>
+        <p>Este código aún no está activado.</p>
+      `;
     }
   </script>
 </body>
