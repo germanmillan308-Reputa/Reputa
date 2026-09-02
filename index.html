@@ -7,33 +7,32 @@
 </head>
 
 <body>
-  <p>Redirigiendo...</p>
-
   <script>
     const destinos = {
-        "001": "https://search.google.com/local/writereview?placeid=ChIJTSofdUjRYpYRecbPbuenEpk&utm_source=chatgpt.com",
-        "002": "https://www.desarmaduriaipar.cl",
-        "003": null,
-        "004": null,
-        "005": null,
-        "006": null,
-        "007": null,
-        "008": null,
-        "009": null,
-        "010": null
+      "001": "https://search.google.com/local/writereview?placeid=ChIJTSofdUjRYpYRecbPbuenEpk&utm_source=chatgpt.com",
+      "002": "https://www.desarmaduriaipar.cl",
+      "003": null,
+      "004": null,
+      "005": null,
+      "006": null,
+      "007": null,
+      "008": null,
+      "009": null,
+      "010": null
     };
 
     const parametros = new URLSearchParams(window.location.search);
     const id = parametros.get("id");
-
     const destino = destinos[id];
 
     if (destino) {
       window.location.replace(destino);
     } else {
       document.body.innerHTML = `
-        <h2>REPUTA</h2>
-        <p>Este código aún no está activado.</p>
+        <div style="text-align:center;margin-top:40px;font-family:Arial,sans-serif;">
+          <h2>REPUTA</h2>
+          <p>Este código aún no está activado.</p>
+        </div>
       `;
     }
   </script>
